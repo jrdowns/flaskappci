@@ -21,7 +21,7 @@ def send_email(name, email, message):
     try:
         # Azure Communication Services setup
         # connection_string = os.getenv('AZURE_EMAIL_CONNECTION_STRING')
-        connection_string = "endpoint=https://comm-flaskappci-prod-01.unitedstates.communication.azure.com/;accesskey=Wx4IqSaGbKE0/DLqLmstXjrF5ixYHVAKQyhhteh9yf6vAwIuTPcf9Ldu/3WQfpPnSmWxaujMSew6cdSgQXdVSw=="
+        connection_string = ""
         client = EmailClient.from_connection_string(connection_string)
         
         message = {

@@ -20,8 +20,7 @@ def send_feedback():
 def send_email(name, email, message):
     try:
         # Azure Communication Services setup
-        # connection_string = os.getenv('AZURE_EMAIL_CONNECTION_STRING')
-        connection_string = ""
+        connection_string = os.getenv('AZURE_EMAIL_CONNECTION_STRING')
         client = EmailClient.from_connection_string(connection_string)
         
         message = {

@@ -1,0 +1,20 @@
+name: Wait 5 Minutes
+
+on:
+  workflow_run:
+    workflows: ["Deploy Flask App to Azure"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  wait:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Wait 5 minutes
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '5m'

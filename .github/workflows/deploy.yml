@@ -26,8 +26,8 @@ jobs:
         env:
           TF_VAR_acr_username: ${{ secrets.ACR_USERNAME }}
           TF_VAR_acr_password: ${{ secrets.ACR_PASSWORD }}
+          TF_VAR_AZURE_EMAIL_CONNECTION_STRING: ${{ secrets.AZURE_MAIL_CONNECTION_STRING }}
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-          AZURE_EMAIL_CONNECTION_STRING: ${{ secrets.AZURE_MAIL_CONNECTION_STRING }}

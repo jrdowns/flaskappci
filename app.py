@@ -20,8 +20,7 @@ def send_feedback():
 def send_email(name, email, message):
     try:
         # Azure Communication Services setup
-        # connection_string = os.getenv('AZURE_EMAIL_CONNECTION_STRING')
-        connection_string = "endpoint=https://comm-flaskappci-prod-01.unitedstates.communication.azure.com/;accesskey=Wx4IqSaGbKE0/DLqLmstXjrF5ixYHVAKQyhhteh9yf6vAwIuTPcf9Ldu/3WQfpPnSmWxaujMSew6cdSgQXdVSw=="
+        connection_string = os.getenv('AZURE_EMAIL_CONNECTION_STRING')
         client = EmailClient.from_connection_string(connection_string)
         
         message = {
@@ -35,11 +34,13 @@ def send_email(name, email, message):
             }
         }
 
+        print(f"Sending email message: {message}")
         poller = client.begin_send(message)
         result = poller.result()
+        print(f"Email sent result: {result}")
 
     except Exception as ex:
-        print(ex)    
+        print(f"Exception: {ex}")    
 
 if __name__ == '__main__':
     app.run(debug=True)

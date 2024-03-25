@@ -15,8 +15,8 @@ resource "azurerm_container_group" "container" {
 
   image_registry_credential {
     server   = "containerregistryflask.azurecr.io"
-    username = var.ARM_CLIENT_ID
-    password = var.ARM_CLIENT_SECRET
+    username = var.acr_username
+    password = var.acr_password
   }
 
   container {

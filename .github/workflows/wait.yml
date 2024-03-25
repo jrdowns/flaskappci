@@ -13,8 +13,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Download Terraform state file
+        uses: actions/download-artifact@v2
+        with:
+          name: terraform-state
+          path: terraform/
         
       - name: Wait 5 minutes
         uses: jakejarvis/wait-action@master
         with:
           time: '5m'
+          
+      - name: Archive Terraform state file
+        uses: actions/upload-artifact@v2
+        with:
+          name: terraform-state
+          path: terraform/terraform.tfstate

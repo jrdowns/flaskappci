@@ -21,7 +21,7 @@ jobs:
 
       - name: Terraform Apply
         run: |
-          terraform apply -auto-approve
+          terraform apply -input=false -auto-approve
         working-directory: ./terraform
         env:
           TF_VAR_acr_username: ${{ secrets.ACR_USERNAME }}

@@ -1,11 +1,11 @@
 name: Wait 5 Minutes
 
-on: workflow_dispatch
- # workflow_run:
-   # workflows: ["Deploy Flask App to Azure"]
-   # branches: [main]
-   # types: 
-   #   - completed
+on:
+  workflow_run:
+    workflows: ["Deploy Flask App to Azure"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
   wait:

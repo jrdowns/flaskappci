@@ -1,11 +1,6 @@
 name: Teardown Flask App
 
-on:
-  workflow_run:
-    workflows: ["Wait 5 Minutes"]
-    branches: [main]
-    types: 
-      - completed
+on: workflow_dispatch
 
 jobs:
   teardown:

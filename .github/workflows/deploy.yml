@@ -37,3 +37,4 @@ jobs:
         with:
           name: terraform-state
           path: terraform/terraform.tfstate
+          if-no-files-found: 'warn'

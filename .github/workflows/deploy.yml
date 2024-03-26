@@ -67,12 +67,6 @@ jobs:
         run: terraform init
         working-directory: ./terraform
 
-      - name: Download Terraform state file
-        uses: actions/download-artifact@v4
-        with:
-          name: terraform-state
-          path: terraform/
-
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
         working-directory: ./terraform
